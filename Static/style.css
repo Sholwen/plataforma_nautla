@@ -1,0 +1,1329 @@
+/* COLRES */
+:root {
+    --bg-primary: #B5B5B5;       /* Gris elegante del fondo superior */
+    --bg-light: #F4F4F4;         /* Fondo de secciones claras */
+    --burgundy: #7C1C24;         /* Rojo vino/Guinda institucional */
+    --text-dark: #1A1A1A;        /* Títulos principales */
+    --text-muted: #666666;      /* Descripciones breves */
+    --white: #FFFFFF;
+    --radius-lg: 24px;
+    --radius-sm: 12px;
+    --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-main);
+}
+
+body {
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    scroll-behavior: smooth;
+}
+
+/* SECCION DE MAIN */
+.main {
+    background-color: var(--white);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-weight: 700;
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+}
+
+.logo img {
+    height: 60px;
+    width: auto;
+}
+
+.logo-box {
+    background-color: var(--text-dark);
+    color: var(--white);
+    padding: 5px 12px;
+    border-radius: 6px;
+    font-weight: 900;
+}
+
+.main-nav {
+    display: flex;
+    gap: 30px;
+}
+
+.main-nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+/*Linea debajo del boton del menu*/
+.main-nav a:hover, .main-nav a.active {
+    color: var(--burgundy);
+    border-bottom: 2px solid var(--burgundy);
+}
+
+/*Diseño de las letras del menu*/
+.main-nav a {
+    text-decoration: none;
+    color: #4D4D4D;
+    padding: 8px 12px;
+    font-size: 0.95rem;
+    font-weight: bold;
+    transition: color 0.3s ease;
+    border-bottom: 2px solid transparent;
+}
+
+
+
+.nav-actions{
+    display:flex;
+    align-items:center;
+    gap:20px;
+}
+
+.language-selector,
+.nav-search{
+    cursor:pointer;
+    font-size:1.2rem;
+    color: var(--text-dark);
+}
+
+.language-selector:hover,
+.nav-search:hover{
+    color: var(--burgundy);
+}
+
+/* SECCION VIDEO */
+.hero {
+    background-color: var(--bg-primary);
+    height: 75vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding-bottom: 100px;
+    
+}
+
+/* ESTILOS DEL VIDEO DE FONDO */
+.bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Hace que el video llene el espacio sin deformarse */
+    z-index: 0; /* Lo envía al fondo */
+}
+
+/* ESTILOS PARA ELEVAR EL CONTENIDO SOBRE EL VIDEO */
+.hero-content, 
+.search-container {
+    position: relative;
+    z-index: 10; /* Los coloca por encima del video */
+}
+
+/* BOTÓN DE VOLUMEN */
+.volume-btn {
+    position: absolute;
+    bottom: 50px; /* Ajustado para que suba un poco más */
+    right: 40px;  /* Pegado a la derecha */
+    z-index: 999; /* Extremadamente alto para asegurar que se vea */
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #ffffff;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+.volume-btn:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+    transform: scale(1.1);
+}
+
+.hero-title-box {
+    text-align: center;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    padding: 40px 80px;
+    background-color: rgba(140, 140, 140, 0.15);
+    backdrop-filter: blur(4px);
+}
+
+.subtitle {
+    font-size: 0.9rem;
+    letter-spacing: 4px;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 10px;
+}
+
+.hero h1 {
+    font-size: 5rem;
+    font-weight: 800;
+    color: var(--white);
+    letter-spacing: 6px;
+    line-height: 1;
+    margin-bottom: 15px;
+}
+
+.tagline {
+    color: var(--white);
+    font-size: 1.1rem;
+    font-weight: 300;
+}
+
+/* BARRA DE BÚSQUEDA FLOTANTE */
+.search-container {
+    background-color: var(--white);
+    position: absolute;
+    bottom: -40px;
+    display: flex;
+    align-items: center;
+    padding: 15px 25px;
+    border-radius: var(--radius-lg);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    width: 75%;
+    max-width: 1000px;
+}
+
+/* Da espacio entre las secciones */
+.search-field {
+    flex: 1;
+    padding: 0 15px;
+}
+
+/* Alinea al centro las secciones */
+.icon-input {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Da color a los iconos */
+.icon-input i {
+    color: var(--burgundy);
+    font-size: 1.3rem;
+}
+
+/* Da estilo a las letras de las secciones */
+.icon-input label {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #999;
+    letter-spacing: 1px;
+    margin-bottom: 2px;
+}
+
+/* Quita el borde de la caja de busqueda */
+.icon-input input {
+    border: none;
+    outline: none;
+    font-size: 0.95rem;
+    color: var(--text-dark);
+    width: 100%;
+}
+
+/* Coloca un pipe antes de cada seccion */
+.divider {
+    width: 1px;
+    height: 40px;
+    background-color: #E0E0E0;
+}
+
+/* Acomoda y alinea el Clima y Hora */
+.weather-widget {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 0 25px;
+    border-left: 1px solid #E0E0E0;
+}
+
+/* Le da color al icono del sol */
+.weather-icon {
+    color: #FFA000;
+    font-size: 1.5rem;
+}
+
+/* Divide en dos columnas la seccion de clima y hora*/
+.weather-info, .time-info {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Pone en negritas la temperatura yv la hora */
+.temp, .time {
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+/* Ajusta la barra de busqueda */
+.condition, .local {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+/* Da diseño al icono de busqueda */
+.btn-search {
+    background-color: var(--burgundy);
+    color: var(--white);
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.1rem;
+    transition: transform 0.2s;
+}
+
+/* Da animacion al icono de busqueda */
+.btn-search:hover {
+    transform: scale(1.05);
+}
+
+/* Le da un margen a la seccion de destinos principales */
+.destinations-section {
+    padding: 120px 8% 60px 8%;
+}
+
+/* Alinea a la derecha el boton de destinos principales */
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 40px;
+}
+
+/* Cambia a color guinda las letras del boton de destinos principales */
+.view-all {
+    color: var(--burgundy);
+    text-decoration: none;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Imperdibles */
+.section-tag {
+    color: var(--burgundy);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+/* Destinos prinmcipales en Nautla */
+.destinations-section h2 {
+    font-size: 2.2rem;
+    line-height: 1.2;
+    margin-bottom: 15px;
+}
+
+.section-desc {
+    color: var(--text-muted);
+    max-width: 600px;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Seccion de cultura */
+.grid-destinations {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 25px;
+}
+
+/* Ajusta la seccion de cultura */
+.card {
+    background-size: cover;
+    background-position: center;
+    border-radius: var(--radius-lg);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    padding: 30px;
+    min-height: 300px;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-large {
+    min-height: 500px;
+}
+
+.sub-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 150px);
+    gap: 20px;
+}
+
+.sub-grid .card {
+    min-height: auto;
+    padding: 20px;
+}
+
+/* Letras en blanco */
+.card-content {
+    color: var(--white);
+    z-index: 2;
+    width: 100%;
+}
+
+/* Ajusta Cultura */
+.badge {
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 50px;
+    letter-spacing: 1px;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+/* Coloca fondos de color a las asecciones */
+.badge.culture { background-color: #E5A93C; }
+.badge.nature { background-color: #4CAF50; }
+.badge.beach { background-color: #00BCD4; }
+.badge.adventure { background-color: #FF5722; }
+
+.card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+.sub-grid .card h3 {
+    font-size: 1.2rem;
+}
+
+/* Diseño de letras EXPLORAR MAS */
+.explore-link {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    opacity: 0.8;
+}
+
+/* Seccion de CATEGORÍAS */
+.categories-section {
+    padding: 60px 8%;
+}
+
+/* Alinea al centro las letras */
+.center { text-align: center; }
+.center-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 40px;
+}
+
+/* Alinea al centro las categorias */
+.categories-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+/*  Recuadros a las categorias */
+.category-item {
+    background-color: var(--white);
+    padding: 30px 20px;
+    border-radius: var(--radius-lg);
+    text-align: center;
+    width: 220px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Ajusta los iconos */
+.category-icon {
+    width: 60px;
+    height: 60px;
+    background-color: #F9F9F9;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 20px auto;
+    font-size: 1.4rem;
+    color: #444;
+    transition: all 0.3s;
+}
+
+/* Ajusta letras del h4*/
+.category-item h4 {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+}
+
+.category-item p {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+/* Efecto hover interactivo como en el video */
+.category-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+.category-item:hover .category-icon {
+    background-color: var(--burgundy);
+    color: var(--white);
+}
+
+/* SECCIÓN DE EVENTOS */
+/* Agrega un margen */
+.events-section {
+    padding: 60px 8%;
+    background-color: var(--bg-light);
+}
+
+/* Divide en dos secciones los eventos */
+.events-container {
+    display: grid;
+    grid-template-columns: 1.12fr 1fr;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+
+/* Diseño al evento destacado */
+.event-featured {
+    background-size: cover;
+    background-position: center;
+    border-radius: var(--radius-lg);
+    position: relative;
+    min-height: 480px;
+    display: flex;
+    align-items: flex-end;
+    padding: 40px;
+    color: var(--white);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    overflow: hidden;
+}
+
+/* Destacado Dorado  */
+.event-badge-live {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    background-color: #E5A93C; 
+    color: var(--text-dark);
+    padding: 6px 14px;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+/* Ajuste de la descripcion del evento  */
+.event-featured-content {
+    display: flex;
+    gap: 25px;
+    align-items: flex-start;
+    width: 100%;
+}
+
+/* fondo blanco a la fecha  */
+.event-date-box {
+    background-color: var(--white);
+    color: var(--text-dark);
+    padding: 12px 18px;
+    border-radius: var(--radius-sm);
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    min-width: 75px;
+}
+
+/* Diseño a la fecha  */
+.event-date-box .day {
+    display: block;
+    font-size: 1.8rem;
+    font-weight: 800;
+    line-height: 1;
+    color: var(--burgundy);
+}
+
+.event-date-box .month {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-top: 2px;
+}
+
+/* Diseño del nombre del evento */
+.event-details h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+/* Diseño del lugar del evento */
+.event-location {
+    font-size: 0.9rem;
+    color: #E5A93C;
+    margin-bottom: 12px;
+    font-weight: 500;
+}
+
+.event-location i {
+    margin-right: 5px;
+}
+
+/* Diseño de la descripcion del evento */
+.event-excerpt {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.5;
+    margin-bottom: 25px;
+}
+
+/* Diseño de la cuenta regresiva */
+.event-countdown {
+    display: flex;
+    gap: 15px;
+}
+
+/* Asigna marcos y fondos de la cuenta regresiva */
+.countdown-item {
+    background-color: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 8px 15px;
+    border-radius: var(--radius-sm);
+    text-align: center;
+    min-width: 65px;
+}
+
+/* Asigna tamaño a los marcos y fondos de la cuenta regresiva */
+.countdown-item span {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+
+.countdown-item small {
+    font-size: 0.65rem;
+    color: rgba(255, 255, 255, 0.7);
+    text-transform: uppercase;
+}
+
+/* Lista de Eventos Laterales */
+.events-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    justify-content: space-between;
+}
+
+/* Divide en secciones los Eventos Laterales */
+.event-item {
+    background-color: var(--white);
+    border-radius: var(--radius-lg);
+    padding: 20px 25px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-left: 4px solid transparent;
+}
+
+.event-item:hover {
+    transform: translateX(5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+    border-left-color: var(--burgundy);
+}
+
+/* Ajusta la fecha de los Eventos Laterales */
+.event-item-date {
+    text-align: center;
+    min-width: 50px;
+}
+
+/* Diseño de la fecha de los Eventos Laterales */
+.item-day {
+    display: block;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+/* Diseño del mes de los Eventos Laterales */
+.item-month {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text-muted);
+}
+
+.event-item-info {
+    flex: 1;
+}
+
+/* Diseño de la descripcion de los Eventos Laterales */
+.event-item-info h4 {
+    font-size: 1.05rem;
+    color: var(--text-dark);
+    margin-bottom: 4px;
+    font-weight: 600;
+}
+
+.event-item-info p {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-bottom: 4px;
+}
+
+/* Color del icono del reloj */
+.event-item-info p i {
+    color: var(--burgundy);
+    margin-right: 4px;
+}
+
+/* Diseño de la descripcion de los Eventos Laterales */
+.event-item-desc {
+    font-size: 0.85rem !important;
+    line-height: 1.4;
+    color: #777 !important;
+}
+
+/* Animacion a la seccion de eventos laterales */
+.btn-event-ticket {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: #F5F5F5;
+    color: var(--text-dark);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-size: 0.8rem;
+    transition: all 0.3s;
+}
+
+.event-item:hover .btn-event-ticket {
+    background-color: var(--burgundy);
+    color: var(--white);
+}
+
+
+/* AJUSTE RESPONSIVO EN MEDIA QUERY EXISTENTE */
+@media (max-width: 900px) {
+    .events-container {
+        grid-template-columns: 1fr;
+    }
+    .event-featured {
+        min-height: 400px;
+        padding: 25px;
+    }
+    .event-featured-content {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+/* Seccion del campamento tortuguero */
+/* Coloca margenes laterales */
+.turtle-section {
+    padding: 80px 8%;
+    background-color: #EBF2EE; /* Verde esmeralda pastel muy suave que conecta con la naturaleza */
+}
+
+/* Ajusta el contenido al centro */
+.turtle-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+/* Bloque Superior: Texto e Imagen */
+.turtle-hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+/* Ajuste del texti h2 */
+.turtle-content h2 {
+    font-size: 2.5rem;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    color: var(--text-dark);
+}
+
+/* Ajuste de la descripcion */
+.turtle-desc {
+    color: var(--text-muted);
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+/* Contadores estéticos */
+.turtle-counter-box {
+    display: flex;
+    gap: 40px;
+}
+
+/* Numeros en guinda */
+.counter-number {
+    display: block;
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--burgundy); 
+    line-height: 1;
+    margin-bottom: 5px;
+}
+
+/* Ajusta el texto debajo de la imagen */
+.counter-label {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+/* Tamaño de la imagen */
+.turtle-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: var(--radius-lg);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+
+}
+
+.turtle-season-badge {
+    position: center;
+    bottom: 25px;
+    right: 25px;
+    background-color: var(--white);
+    padding: 12px 20px;
+    border-radius: var(--radius-sm);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.season-title {
+    display: block;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: var(--text-muted);
+    margin-bottom: 2px;
+}
+
+/* Color verde bosque de fondo de la seccion */
+.season-months {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #2E7D32; /* Verde bosque para resaltar la temporada viva */
+}
+
+/* Centra y separa las Actividades Inferiores */
+.turtle-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+/* Coloca fondo a las Actividades Inferiores */
+.turtle-card {
+    background-color: var(--white);
+    border-radius: var(--radius-lg);
+    padding: 35px 30px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.turtle-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+/* Diseño de los iconos */
+.t-card-icon {
+    width: 50px;
+    height: 50px;
+    background-color: #E8F5E9;
+    color: #2E7D32;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+}
+
+.turtle-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+    color: var(--text-dark);
+}
+
+.turtle-card p {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+}
+
+/* Color guinda a la Tarjeta Destacada (Liberación) */
+.featured-t-card {
+    background-color: var(--burgundy);
+    color: var(--white);
+    transform: scale(1.03); /* Ligeramente más grande */
+}
+
+.featured-t-card .t-card-icon {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: var(--white);
+}
+
+/* Diseño del texto h3 */
+.featured-t-card h3 {
+    color: var(--white);
+}
+
+/* Diseño del texto p */
+.featured-t-card p {
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 20px;
+}
+
+.btn-turtle-action {
+    margin-top: auto;
+    background-color: #E5A93C; /* Botón dorado uniforme */
+    color: var(--text-dark);
+    text-decoration: none;
+    text-align: center;
+    padding: 12px;
+    border-radius: var(--radius-sm);
+    font-weight: 700;
+    font-size: 0.85rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    transition: background 0.3s;
+}
+
+.btn-turtle-action:hover {
+    background-color: #d49a30;
+}
+
+/* RESPONSIVO */
+@media (max-width: 900px) {
+    .turtle-hero {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    .turtle-cards-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    .featured-t-card {
+        transform: scale(1);
+    }
+    .turtle-img-wrapper {
+        height: 280px;
+    }
+}
+
+
+
+
+
+/* Seccion del mapa*/
+.social-map-section {
+    padding: 60px 8%;
+}
+
+.social-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 40px;
+}
+
+/* Mock Map */
+.map-block {
+    background-color: var(--white);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.mock-map {
+    background-color: #E8ECE9;
+    height: 250px;
+    position: relative;
+    background-image: radial-gradient(#D0D7D3 2px, transparent 2px);
+    background-size: 20px 20px;
+}
+
+.map-line {
+    position: absolute;
+    width: 60%;
+    height: 4px;
+    background-color: #A3B899;
+    top: 50%;
+    left: 20%;
+    transform: rotate(-15deg);
+}
+
+.map-pin {
+    position: absolute;
+    background-color: #757575;
+    color: var(--white);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.map-pin::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 5px 5px 0;
+    border-style: solid;
+    border-color: #757575 transparent;
+}
+
+.pin-1 { top: 30%; left: 30%; }
+.pin-2.active-pin { 
+    background-color: var(--burgundy);
+    top: 55%; 
+    left: 45%; 
+}
+.pin-2.active-pin::after { border-color: var(--burgundy) transparent; }
+
+/* Centra el mapa en el contenedor */
+.mapa-contenedor {
+    display: flex;
+    justify-content: center;
+}
+
+/* Alinea la info del mapa */
+.map-info {
+    padding: 30px;
+}
+
+.map-info h4 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.map-info p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+/* Boton de google maps */
+.btn-map {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 1px solid #E0E0E0;
+    border-radius: var(--radius-sm);
+    text-decoration: none;
+    color: var(--text-dark);
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+.btn-map:hover { background-color: #F5F5F5; }
+
+/* Instagram block */
+.instagram-block {
+    display: flex;
+    flex-direction: column;
+}
+
+.insta-handle {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.insta-handle i {
+    font-size: 2.5rem;
+    color: var(--text-dark);
+}
+
+.insta-handle h3 { font-size: 1.3rem; }
+.insta-handle p { font-size: 0.85rem; color: var(--text-muted); }
+
+/* Divide en columnas las publicaciones de insta */
+.insta-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+/* Asigna tamaño a las publicaciones */
+.insta-item {
+    background-size: cover;
+    background-position: center;
+    height: 180px;
+    border-radius: var(--radius-sm);
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+/* Animacion de las reacciones */
+.insta-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    color: var(--white);
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-weight: 600;
+}
+
+.insta-item:hover .insta-overlay { opacity: 1; }
+
+/* Diseño al boton de instagram */
+.btn-insta-follow {
+    background-color: var(--white);
+    border: 1px solid #E0E0E0;
+    padding: 14px;
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-insta-follow:hover { background-color: #F5F5F5; }
+
+/* Seccion del FOOTER */
+/* Color del fondo del FOOTER */
+.footer {
+    background-color: var(--burgundy);
+    color: rgba(255, 255, 255, 0.8);
+    padding: 60px 8% 30px 8%;
+}
+
+/* Divide en secciones el contenido del FOOTER */
+.footer-container {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr 1fr 1fr;
+    gap: 40px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding-bottom: 40px;
+}
+
+/* Seccion del logo y Ayuntamiento */
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--white);
+    margin-bottom: 20px;
+}
+
+/* Asigna fondo a la letra N */
+.logo-box-light {
+    background-color: var(--white);
+    color: var(--burgundy);
+    padding: 5px 12px;
+    border-radius: 6px;
+    font-weight: 900;
+    font-size: 1.2rem;
+}
+
+.footer-logo h3 { letter-spacing: 1px; font-size: 1.2rem; }
+.footer-logo p { font-size: 0.65rem; letter-spacing: 2px; }
+
+/* Diseño de las letras de la descripcion */
+.footer-desc {
+    font-size: 0.85rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Tamaño de los iconos */
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+/* Cambia el color de los iconos */
+.social-icons a {
+    color: var(--white);
+    background-color: rgba(255,255,255,0.1);
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background 0.3s;
+}
+
+/* Animacion de los iconos */
+.social-icons a:hover { background-color: rgba(255,255,255,0.25); }
+
+/* Texto del h3 */
+.footer h3 {
+    color: var(--white);
+    font-size: 0.95rem;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+}
+
+/* Diseño de los atractivos turisticos */
+.footer-links ul { list-style: none; }
+.footer-links ul li { margin-bottom: 12px; }
+.footer-links ul li a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: color 0.3s;
+}
+
+.footer-links ul li a:hover { color: var(--white); }
+
+/* Diseño de la informacion de contacto */
+.footer-contact p {
+    font-size: 0.85rem;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    line-height: 1.4;
+}
+
+.footer-newsletter p {
+    font-size: 0.85rem;
+    margin-bottom: 15px;
+}
+
+/* Aumenta el largo de la caja de texto y el boton del boletin */
+.newsletter-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* DA diseño a la caja del correo electronico */
+.newsletter-form input {
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    background-color: rgba(255,255,255,0.15);
+    color: var(--white);
+    font-size: 0.85rem;
+}
+
+.newsletter-form input::placeholder { color: rgba(255,255,255,0.5); }
+
+/* Diseño del boton subscribirse */
+.newsletter-form button {
+    background-color: #E5A93C; /* Botón dorado/amarillo sutil del video */
+    color: var(--text-dark);
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+    letter-spacing: 1px;
+    font-size: 0.8rem;
+    transition: background 0.3s;
+}
+
+.newsletter-form button:hover { background-color: #d49a30; }
+
+/* Aviso de terminos y condiciones */
+.footer-bottom {
+    padding-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.5);
+}
+
+/* Separacion intermedia */
+.bottom-links {
+    display: flex;
+    gap: 20px;
+}
+
+/* Color del texto */
+.bottom-links a {
+    color: rgba(255,255,255,0.5);
+    text-decoration: none;
+}
+
+/* Animacion de los links */
+.bottom-links a:hover { color: var(--white); }
+
+/* RESPONSIVE DESIGN BÁSICO */
+@media (max-width: 900px) {
+    .search-container { flex-direction: column; width: 90%; gap: 15px; bottom: -120px; }
+    .hero { padding-bottom: 150px; }
+    .divider { display: none; }
+    .grid-destinations { grid-template-columns: 1fr; }
+    .social-grid { grid-template-columns: 1fr; }
+    .footer-container { grid-template-columns: 1fr 1fr; }
+}

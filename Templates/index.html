@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nautla</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Menu de navegacion -->
+    <header class="main">
+        <div class="container header-flex"></div>
+        <div class="logo">
+            <img src="~/plataforma_nautla/Static/Imagenes/escudo.jpeg" alt="Escudo del Municipio">
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="#inicio" class="active">Inicio</a></li>
+                <li><a href="#descubre">Descubre</a></li>
+                <li><a href="#actividades">Actividades</a></li>
+                <li><a href="#eventos">Eventos</a></li>
+                <li><a href="#campamento">Campamento Tortuguero</a></li>
+                <li><a href="#ubicacion">Ubicación</a></li>
+            </ul>
+        </nav>
+
+        <!-- Icono de lupa y lenguaje -->
+        <div class="nav-actions">
+            <div class="nav-search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+
+            <div class="language-selector">
+                <i class="fa-solid fa-language"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Seccion del texto que va sobre el video -->
+    <section id="inicio" class="hero">
+        <video autoplay loop muted playsinline id="bg-video" class="bg-video">
+            <source src="~/plataforma_nautla/Static/Imagenes/video.mp4" type="video/mp4">
+            Tu navegador no soporta la etiqueta de video.
+        </video>
+
+        <div class="hero-overlay">
+            <div class="hero-title-box">
+                <p class="subtitle">VERACRUZ, MÉXICO</p>
+                <h1>NAUTLA</h1>
+                <p class="tagline">Donde el río abraza al mar. Descubre la magia de la costa.</p>
+            </div>
+        </div>
+
+        <button id="volume-btn" class="volume-btn" aria-label="Silenciar o activar sonido">
+            <i class="fa-solid fa-volume-xmark"></i>
+        </button>
+
+        <!-- Seccion de buscar deestino -->
+        <div class="search-container">
+            <div class="search-field">
+                <div class="icon-input">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <div>
+                        <label>DESTINO</label>
+                        <input type="text" placeholder="Ej. Barra de Palmas">
+                    </div>
+                </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <!-- Seccion de buscar actividad -->
+            <div class="search-field">
+                <div class="icon-input">
+                    <i class="fa-solid fa-compass"></i>
+                    <div>
+                        <label>ACTIVIDAD</label>
+                        <input type="text" placeholder="Ej. Paseo en lancha">
+                    </div>
+                </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <!-- Seccion de clima -->
+            <div class="weather-widget">
+                <i class="fa-solid fa-sun weather-icon"></i>
+                <div class="weather-info">
+                    <span class="temp">28°C</span>
+                    <span class="condition">Soleado</span>
+                </div>
+
+                <!-- Seccion de la hora -->
+                <div class="time-info">
+                    <span class="time">17:09</span>
+                    <span class="local">Local</span>
+                </div>
+            </div>
+
+            <!-- Boton de busqueda -->
+            <button class="btn-search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+        </div>
+    </section>
+
+    <!-- Seccion de destinos -->
+    <section id="descubre" class="destinations-section">
+        <div class="section-header">
+            <div>
+                <p class="section-tag">IMPERDIBLES</p>
+                <h2>Destinos Principales en<br>Nautla</h2>
+                <p class="section-desc">Explora nuestros rincones más emblemáticos, donde la historia, naturaleza y cultura convergen para ofrecerte una experiencia inolvidable.</p>
+            </div>
+            <a href="#" class="view-all">Ver todos los destinos <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+
+        <!-- Seccion de CULTURA -->
+        <div class="grid-destinations">
+            <div class="card card-large" style="background-image: linear-gradient(to top, rgba(0,0,0,0.7), transparent), url('https://d3fphkxyf5o5bm.cloudfront.net/image-resize/format=webp,w=1200/QwRY54Li1HMwD7oNfodQk9P4ZRSLBjKPOzO4xvcz8D');">
+                <div class="card-content">
+                    <span class="badge beach">PLAYA</span>
+                    <h3>Maracaibo</h3>
+                    <a href="#" class="explore-link">Explorar ahora <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <!-- Seccion de RIO MISANTLA -->
+            <div class="sub-grid">
+                <div class="card card-small" style="background-image: linear-gradient(to top, rgba(0,0,0,0.7), transparent), url('~/plataforma_nautla/Static/Imagenes/rio.jpg');">
+                    <div class="card-content">
+                        <span class="badge nature">NATURALEZA</span>
+                        <h3>Río Misantla</h3>
+                    </div>
+                </div>
+
+            <!-- Seccion de BARRAS DE PALMAS -->
+                <div class="card card-small" style="background-image: linear-gradient(to top, rgba(0,0,0,0.7), transparent), url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80');">
+                    <div class="card-content">
+                        <span class="badge culture">CULTURA</span>
+                        <h3>Centro Historico</h3>
+                        <a href="#" class="explore-link">Explorar ahora <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+            <!-- Seccion de COSTA ESMERALDA -->
+                <div class="card card-small" style="background-image: linear-gradient(to top, rgba(0,0,0,0.7), transparent), url('https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=800&q=80');">
+                    <div class="card-content">
+                        <span class="badge adventure">AVENTURA</span>
+                        <h3>Costa Esmeralda</h3>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Seccion de categorias -->
+    <section id="actividades" class="categories-section">
+        <p class="section-tag center">PLANEA TU VIAJE</p>
+        <h2 class="center-title">Descubre por Categoría</h2>
+        
+        <div class="categories-container">
+            <div class="category-item">
+                <div class="category-icon"><i class="fa-solid fa-utensils"></i></div>
+                <h4>Gastronomía</h4>
+                <p>Sabores auténticos del golfo</p>
+            </div>
+            <div class="category-item">
+                <div class="category-icon"><i class="fa-solid fa-bed"></i></div>
+                <h4>Hospedaje</h4>
+                <p>Descansa frente al mar o río</p>
+            </div>
+            <div class="category-item">
+                <div class="category-icon"><i class="fa-solid fa-leaf"></i></div>
+                <h4>Naturaleza</h4>
+                <p>Ecoturismo y aventura</p>
+            </div>
+            <div class="category-item">
+                <div class="category-icon"><i class="fa-solid fa-landmark"></i></div>
+                <h4>Cultura</h4>
+                <p>Tradiciones e historia</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seccion de eventos -->
+    <section id="eventos" class="events-section">
+        <div class="section-header">
+            <div>
+                <p class="section-tag">AGENDA CULTURAL</p>
+                <h2>Próximos Eventos en Nautla</h2>
+                <p class="section-desc">No te pierdas de nuestras celebraciones, festivales y actividades tradicionales. ¡Planea tu visita y vive la tradición de cerca!</p>
+            </div>
+            <a href="#" class="view-all">Ver calendario completo <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+
+        <div class="events-container">
+            <div class="event-featured" style="background-image: linear-gradient(to top, rgba(0,0,0,0.85), rgba(0,0,0,0.2)), url('https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=1000&q=80');">
+                <span class="event-badge-live"><i class="fa-solid fa-star"></i> DESTACADO</span>
+                <div class="event-featured-content">
+                    <div class="event-date-box">
+                        <span class="day">01</span>
+                        <span class="month">JUN</span>
+                    </div>
+                    <div class="event-details">
+                        <h3>Día de la Marina Nautla 2026</h3>
+                        <p class="event-location"><i class="fa-solid fa-location-dot"></i> Malecón y Playa de Nautla</p>
+                        <p class="event-excerpt">La fiesta más grande del municipio. Disfruta del tradicional paseo en lancha, fuegos pirotécnicos, bailes populares y la coronación de la reina de las fiestas del mar.</p>
+                        
+                        <div class="event-countdown">
+                            <div class="countdown-item"><span>05</span><small>Días</small></div>
+                            <div class="countdown-item"><span>12</span><small>Horas</small></div>
+                            <div class="countdown-item"><span>44</span><small>Min</small></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="events-list">
+                <div class="event-item">
+                    <div class="event-item-date">
+                        <span class="item-day">15</span>
+                        <span class="item-month">JUL</span>
+                    </div>
+                    <div class="event-item-info">
+                        <h4>Torneo Anual de Pesca Deportiva</h4>
+                        <p><i class="fa-solid fa-clock"></i> 07:00 AM | Barra de Palmas</p>
+                        <p class="event-item-desc">Aficionados y profesionales se reúnen para capturar las mejores especies del Golfo en un ambiente familiar.</p>
+                    </div>
+                    <a href="#" class="btn-event-ticket"><i class="fa-solid fa-chevron-right"></i></a>
+                </div>
+
+                <div class="event-item">
+                    <div class="event-item-date">
+                        <span class="item-day">24</span>
+                        <span class="item-month">AGO</span>
+                    </div>
+                    <div class="event-item-info">
+                        <h4>Festival del Manglar y la Tortuga Marina</h4>
+                        <p><i class="fa-solid fa-clock"></i> 10:00 AM | Centro Ecoturístico</p>
+                        <p class="event-item-desc">Talleres ambientales, liberación de crías de tortuga y recorridos guiados nocturnos por los manglares.</p>
+                    </div>
+                    <a href="#" class="btn-event-ticket"><i class="fa-solid fa-chevron-right"></i></a>
+                </div>
+
+                <div class="event-item">
+                    <div class="event-item-date">
+                        <span class="item-day">16</span>
+                        <span class="item-month">SEP</span>
+                    </div>
+                    <div class="event-item-info">
+                        <h4>Fiestas Patrias: Verbena Popular</h4>
+                        <p><i class="fa-solid fa-clock"></i> 08:00 PM | Palacio Municipal</p>
+                        <p class="event-item-desc">Grito de Independencia, muestra gastronómica con antojos típicos de la región y música folclórica en vivo.</p>
+                    </div>
+                    <a href="#" class="btn-event-ticket"><i class="fa-solid fa-chevron-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Seccion del campamento tortuguero -->
+    <section id="campamento" class="turtle-section">
+        <div class="turtle-container">
+            <div class="turtle-hero">
+                <div class="turtle-content">
+                    <p class="section-tag"><i class="fa-solid fa-seedling"></i> ECOTURISMO RESPONSABLE</p>
+                    <h2>Campamento Tortuguero<br>Nautla</h2>
+                    <p class="turtle-desc">
+                        Sé testigo de uno de los milagros más conmovedores de la naturaleza. Nuestro campamento se dedica a la protección, incubación y liberación de miles de crías de tortuga marina año con año. 
+                    </p>
+                    
+                    <div class="turtle-counter-box">
+                        <div class="counter-item">
+                            <span class="counter-number">+150K</span>
+                            <span class="counter-label">Crías Liberadas</span>
+                        </div>
+                        <div class="counter-item">
+                            <span class="counter-number">20+</span>
+                            <span class="counter-label">Años Protegiendo</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="turtle-img-wrapper">
+                    <img src="/home/mochis/Descargas/tortuga.jpeg">
+                    <div class="turtle-season-badge">
+                        <span class="season-title">TEMPORADA</span>
+                        <span class="season-months">Mayo - Septiembre</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="turtle-cards-grid">
+                
+                <div class="turtle-card">
+                    <div class="t-card-icon"><i class="fa-solid fa-hands-holding-child"></i></div>
+                    <h3>Patrullajes Nocturnos</h3>
+                    <p>Acompaña a los biólogos y voluntarios a recorrer las playas bajo las estrellas para identificar y resguardar nidos en peligro.</p>
+                </div>
+
+                <div class="turtle-card featured-t-card">
+                    <div class="t-card-icon"><i class="fa-solid fa-dove"></i></div>
+                    <h3>Liberación de Crías</h3>
+                    <p>Vive la emotiva experiencia de guiar a las pequeñas tortuguitas recién nacidas en su primer viaje directo hacia las olas del mar.</p>
+                </div>
+
+                <div class="turtle-card">
+                    <div class="t-card-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                    <h3>Pláticas Educativas</h3>
+                    <p>Talleres interactivos ideales para niños y escuelas sobre la importancia de la conservación marina y el reciclaje.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Seccion de mapa -->
+     <section id="ubicacion" class="social-map-section">
+        <h2 class="center-title">Ubicación</h2>
+        <div class="social-grid">
+            <div class="map-block">
+                <div class="mapa-contenedor">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14977.246200553738!2d-96.77880168458599!3d20.204370749943767!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85dba073aa378529%3A0x6f6f63837a93e678!2sParque%20Municipal!5e0!3m2!1ses!2smx!4v1780545105448!5m2!1ses!2smx" 
+                        width="600" 
+                        height="450" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+                <div class="map-info">
+                    <h4><i class="fa-solid fa-location-dot"></i> Ubicación Estratégica</h4>
+                    <p>A solo unas horas de la Ciudad de México y Puebla. Explora nuestras playas y zonas de manglares.</p>
+                    <a href="#" class="btn-map">Abrir en Google Maps <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+
+            <!-- Seccion de instagram -->
+            <div class="instagram-block">
+                <div class="insta-handle">
+                    <i class="fa-brands fa-instagram"></i>
+                    <div>
+                        <h3>@VisitaNautla</h3>
+                        <p>Comparte tu experiencia usando #NautlaVeracruz</p>
+                    </div>
+                </div>
+                <div class="insta-gallery">
+                    <div class="insta-item" style="background-image: url('https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=400&q=80');">
+                        <div class="insta-overlay">
+                            <span><i class="fa-solid fa-heart"></i> 342</span>
+                            <span><i class="fa-solid fa-comment"></i> 24</span>
+                        </div>
+                    </div>
+                    <div class="insta-item" style="background-image: url('https://images.unsplash.com/photo-1534713505459-a57a73f66a68?auto=format&fit=crop&w=400&q=80');">
+                        <div class="insta-overlay"> 
+                            <span><i class="fa-solid fa-heart"></i> 512</span>
+                            <span><i class="fa-solid fa-comment"></i> 45</span>
+                        </div>
+                    </div>
+                    <div class="insta-item" style="background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80');">
+                        <div class="insta-overlay">
+                            <span><i class="fa-solid fa-heart"></i> 289</span>
+                            <span><i class="fa-solid fa-comment"></i> 12</span>
+                        </div>
+                    </div>
+                    <div class="insta-item" style="background-image: url('https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=400&q=80');">
+                        <div class="insta-overlay">
+                            <span><i class="fa-solid fa-heart"></i> 621</span>
+                            <span><i class="fa-solid fa-comment"></i> 58</span>
+                        </div>
+                    </div>
+                </div>
+                <button class="btn-insta-follow">Síguenos en Instagram</button>
+            </div>
+        </div>
+     </section>
+
+     <!-- Seccion del footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-info">
+                <div class="footer-logo">
+                    <span class="logo-box-light">N</span>
+                    <div>
+                        <h3>NAUTLA</h3>
+                        <p>H. AYUNTAMIENTO</p>
+                    </div>
+                </div>
+
+                <!-- Seccion de redes sociales -->
+                <p class="footer-desc">Sitio oficial de turismo del H. Ayuntamiento de Nautla, Veracruz. Descubre la belleza de nuestra costa, historia y tradiciones.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+            
+            <!-- Seccion de enlaces rapidos -->
+            <div class="footer-links">
+                <h3>ENLACES RÁPIDOS</h3>
+                <ul>
+                    <li><a href="#">Atractivos Turísticos</a></li>
+                    <li><a href="#">Directorio de Hoteles</a></li>
+                    <li><a href="#">Restaurantes</a></li>
+                    <li><a href="#">Eventos Culturales</a></li>
+                    <li><a href="#">Transparencia</a></li>
+                </ul>
+            </div>
+
+            <!-- Seccion de contacto -->
+            <div class="footer-contact">
+                <h3>CONTACTO</h3>
+                <p><i class="fa-solid fa-map-marker-alt"></i> Calle Andicoechea 1, Col. Centro, C.P. 93800 Nautla, Veracruz.</p>
+                <p><i class="fa-solid fa-phone"></i> +52 (232) 321 0900</p>
+                <p><i class="fa-solid fa-envelope"></i> turismo@nautla.gob.mx</p>
+            </div>
+
+            <!-- Seccion del boletin de eventos -->
+            <div class="footer-newsletter">
+                <h3>BOLETÍN</h3>
+                <p>Suscríbete para recibir noticias y próximos eventos en Nautla.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Tu correo electrónico" required>
+                    <button type="submit">SUSCRIBIRSE</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Seccion de Aviso de privacidad -->
+       <div class="footer-bottom">
+            <p>&copy; 2026 H. Ayuntamiento de Nautla, Veracruz. Todos los derechos reservados.</p>
+            <div class="bottom-links">
+                <a href="#">Aviso de Privacidad</a>
+                <a href="#">Términos y Condiciones</a>
+            </div>
+        </div> 
+    </footer>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const video = document.getElementById('bg-video');
+        const volumeBtn = document.getElementById('volume-btn');
+        const icon = volumeBtn.querySelector('i');
+
+        volumeBtn.addEventListener('click', function() {
+            if (video.muted) {
+                // Activar sonido
+                video.muted = false;
+                icon.classList.remove('fa-volume-xmark');
+                icon.classList.add('fa-volume-high');
+            } else {
+                // Silenciar
+                video.muted = true;
+                icon.classList.remove('fa-volume-high');
+                icon.classList.add('fa-volume-xmark');
+            }
+        });
+    });
+</script>
+</body>
+</html>
