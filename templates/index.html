@@ -1,10 +1,11 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nautla</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -14,7 +15,7 @@
     <header class="main">
         <div class="container header-flex"></div>
         <div class="logo">
-            <img src="~/plataforma_nautla/Static/Imagenes/escudo.jpeg" alt="Escudo del Municipio">
+            <img src="{% static 'Imagenes/escudo.jpeg' %}" alt="Escudo del Municipio">
         </div>
         <nav class="main-nav">
             <ul>
@@ -42,7 +43,7 @@
     <!-- Seccion del texto que va sobre el video -->
     <section id="inicio" class="hero">
         <video autoplay loop muted playsinline id="bg-video" class="bg-video">
-            <source src="~/plataforma_nautla/Static/Imagenes/video.mp4" type="video/mp4">
+            <source src="{% static 'Imagenes/video.mp4' %}" type="video/mp4">
             Tu navegador no soporta la etiqueta de video.
         </video>
 
