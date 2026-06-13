@@ -1,0 +1,224 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nautla</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Menu de navegacion -->
+    <header class="main">
+        <div class="container header-flex"></div>
+        <div class="logo">
+            <img src="{% static 'Imagenes/escudo.jpeg' %}" alt="Escudo del Municipio">
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="{% url 'inicio' %}" class="active">Inicio</a></li>
+                <li><a href="#descubre">Descubre</a></li>
+                <li><a href="#actividades">Actividades</a></li>
+                <li><a href="#eventos">Eventos</a></li>
+                <li><a href="#campamento">Campamento Tortuguero</a></li>
+                <li><a href="#ubicacion">Ubicación</a></li>
+            </ul>
+        </nav>
+
+        <!-- Icono de lupa y lenguaje -->
+        <div class="nav-actions">
+            <div class="nav-search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+
+            <div class="language-selector">
+                <i class="fa-solid fa-language"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- AQUI VA LO IMPORTANTE -->
+
+<main style="max-width: 1100px; margin: 6rem auto 4rem auto; padding: 0 5%;">
+    <div style="margin-bottom: 3rem; text-align: center;">
+        <p class="section-tag">AGENDA CULTURAL</p>
+        <h2>Festividades y Eventos en Nautla</h2>
+    </div>
+
+    <div class="eventos-lista-unica">
+        
+        <article class="evento-card-ancha">
+            <div class="evento-img-izq">
+                <img src="https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=600&q=80" alt="Día de la Marina">
+            </div>
+            
+            <div class="evento-info-der">
+                <div class="evento-fecha-caja">
+                    <span class="dia">01</span>
+                    <span class="mes">JUN</span>
+                </div>
+                
+                <div class="evento-textos">
+                    <h3>Día de la Marina Nautla 2026</h3>
+                    <p><i class="fa-solid fa-clock"></i> 09:00 AM | <i class="fa-solid fa-location-dot"></i> Malecón</p>
+                    <p class="desc-corta">La fiesta más grande del municipio. Disfruta del tradicional paseo en lancha y fuegos pirotécnicos.</p>
+                </div>
+                
+                <div class="evento-accion">
+                    <button class="btn-event-ticket btn-abrir-modal" onclick="abrirModalEvento()"><i class="fa-solid fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </article>
+
+        </div>
+</main>
+
+<div id="modalFondo" class="modal-overlay">
+        <div class="modal-contenido">
+            <button class="modal-cerrar" onclick="cerrarModalEvento()"><i class="fa-solid fa-xmark"></i></button>
+            
+            <div class="modal-cuerpo">
+                <div class="carrusel-modal">
+                    <div class="carrusel-slides">
+                        <img src="https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=1000&q=80" class="slide activo" alt="Foto 1">
+                        <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1000&q=80" class="slide" alt="Foto 2">
+                        <img src="https://images.unsplash.com/photo-1534713505459-a57a73f66a68?auto=format&fit=crop&w=1000&q=80" class="slide" alt="Foto 3">
+                    </div>
+                    
+                    <button class="carrusel-btn btn-izq" onclick="moverCarrusel(-1)">&#10094;</button>
+                    <button class="carrusel-btn btn-der" onclick="moverCarrusel(1)">&#10095;</button>
+                </div>
+                <h2>Día de la Marina Nautla 2026</h2>
+                <ul class="datos-lista-modal">
+                    <li><i class="fa-solid fa-calendar-days"></i> 01 de Junio, 2026</li>
+                    <li><i class="fa-solid fa-clock"></i> 09:00 AM - 11:00 PM</li>
+                    <li><i class="fa-solid fa-location-dot"></i> Malecón de Nautla</li>
+                </ul>
+                <p>La fiesta más grande del municipio. Disfruta del tradicional paseo en lancha, fuegos pirotécnicos, bailes populares y la coronación de la reina de las fiestas del mar.</p>
+                
+                <div class="observaciones-caja">
+                    <h4><i class="fa-solid fa-circle-info"></i> A tomar en cuenta</h4>
+                    <p>Evento gratuito. Llevar ropa fresca y llegar temprano.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-info">
+                <div class="footer-logo">
+                    <span class="logo-box-light">N</span>
+                    <div>
+                        <h3>NAUTLA</h3>
+                        <p>H. AYUNTAMIENTO</p>
+                    </div>
+                </div>
+
+                <!-- Seccion de redes sociales -->
+                <p class="footer-desc">Sitio oficial de turismo del H. Ayuntamiento de Nautla, Veracruz. Descubre la belleza de nuestra costa, historia y tradiciones.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+            
+            <!-- Seccion de enlaces rapidos -->
+            <div class="footer-links">
+                <h3>ENLACES RÁPIDOS</h3>
+                <ul>
+                    <li><a href="#">Atractivos Turísticos</a></li>
+                    <li><a href="#">Directorio de Hoteles</a></li>
+                    <li><a href="#">Restaurantes</a></li>
+                    <li><a href="#">Eventos Culturales</a></li>
+                    <li><a href="#">Transparencia</a></li>
+                </ul>
+            </div>
+
+            <!-- Seccion de contacto -->
+            <div class="footer-contact">
+                <h3>CONTACTO</h3>
+                <p><i class="fa-solid fa-map-marker-alt"></i> Calle Andicoechea 1, Col. Centro, C.P. 93800 Nautla, Veracruz.</p>
+                <p><i class="fa-solid fa-phone"></i> +52 (232) 321 0900</p>
+                <p><i class="fa-solid fa-envelope"></i> turismo@nautla.gob.mx</p>
+            </div>
+
+            <!-- Seccion del boletin de eventos -->
+            <div class="footer-newsletter">
+                <h3>BOLETÍN</h3>
+                <p>Suscríbete para recibir noticias y próximos eventos en Nautla.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Tu correo electrónico" required>
+                    <button type="submit">SUSCRIBIRSE</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Seccion de Aviso de privacidad -->
+        <div class="footer-bottom">
+            <p>&copy; 2026 H. Ayuntamiento de Nautla, Veracruz. Todos los derechos reservados.</p>
+            <div class="bottom-links">
+                <a href="#">Aviso de Privacidad</a>
+                <a href="#">Términos y Condiciones</a>
+            </div>
+        </div> 
+    </footer>
+
+    <script>
+        // Funciones para abrir y cerrar la ventana emergente
+        const modal = document.getElementById('modalFondo');
+
+        function abrirModalEvento() {
+            modal.classList.add('activo');
+            document.body.style.overflow = 'hidden'; // Evita que la página del fondo haga scroll
+        }
+
+        // Lógica del Carrusel
+        let indiceActual = 0;
+
+        function moverCarrusel(direccion) {
+            const slides = document.querySelectorAll('.carrusel-modal .slide');
+            
+            // Le quitamos la clase "activo" a la imagen actual
+            slides[indiceActual].classList.remove('activo');
+            
+            // Calculamos el nuevo índice
+            indiceActual = indiceActual + direccion;
+            
+            // Si llegamos al final, volvemos a la primera. Si retrocedemos en la primera, vamos a la última.
+            if (indiceActual >= slides.length) {
+                indiceActual = 0;
+            } else if (indiceActual < 0) {
+                indiceActual = slides.length - 1;
+            }
+            
+            // Le ponemos la clase "activo" a la nueva imagen
+            slides[indiceActual].classList.add('activo');
+        }
+
+        // Mejora para resetear el carrusel a la foto 1 cada vez que cierras el modal
+        function cerrarModalEvento() {
+            modal.classList.remove('activo');
+            document.body.style.overflow = 'auto';
+            
+            // Reiniciar carrusel
+            const slides = document.querySelectorAll('.carrusel-modal .slide');
+            slides[indiceActual].classList.remove('activo');
+            indiceActual = 0;
+            slides[0].classList.add('activo');
+        }
+
+        // Si el usuario hace clic afuera del modal (en la parte oscura), también se cierra
+        window.addEventListener('click', function(event) {
+            if (event.target === modal) {
+                cerrarModalEvento();
+            }
+        });
+    </script>
+</body>
+</html>
